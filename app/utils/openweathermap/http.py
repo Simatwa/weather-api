@@ -1,6 +1,6 @@
 """Makes actual http requests"""
 
-from app.v1.openweathermap.urls import BASE_URL
+from app.utils.openweathermap.urls import BASE_URL
 from app.utils import env_config
 
 from httpx import Client
