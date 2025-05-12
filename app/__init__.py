@@ -1,5 +1,5 @@
 """
-API module. Uses FastAPI.
+Weather API module. Uses FastAPI.
 """
 
 import time
