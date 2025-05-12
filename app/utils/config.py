@@ -12,5 +12,5 @@ class Config(BaseModel):
     )
 
 
-env_config = Config(**dotenv_values)
+env_config = Config(**dotenv_values())
 """Loaded Config from .env file"""

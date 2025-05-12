@@ -3,26 +3,21 @@
 from app.utils.openweathermap.urls import BASE_URL
 from app.utils import env_config
 
-from httpx import Client
+from httpx import AsyncClient
 
 
 class WeatherRequest:
     """Requests wrapper"""
 
-    def __init__(self, api_key: str):
-        """Constructor for `WeatherRequest`
-
-        Args:
-            api_key (str): OpenWeatherMap API key
-        """
-        self.api_key = api_key
-        self.client = Client(
+    def __init__(self):
+        """Constructor for `WeatherRequest`"""
+        self.client = AsyncClient(
             base_url=BASE_URL,
             headers={"Content-Type": "application/json"},
             params={"appid": env_config.OPEN_WEATHER_MAP_API_KEY},
         )
 
-    def get(self, url: str, /, **params) -> dict:
+    async def get(self, url: str, /, **params) -> dict:
         """Makes http get request
 
         url (str): Endpoint url without base-url
@@ -31,6 +26,6 @@ class WeatherRequest:
         Returns:
             dict: Http response
         """
-        request = self.client.get(url, params=params)
+        request = await self.client.get(url, params=params)
         request.raise_for_status()
         return request.json()
