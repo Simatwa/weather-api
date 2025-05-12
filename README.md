@@ -1,5 +1,11 @@
 <h1 align="center">Weather-API</h1>
 
+<p align="center">
+  <a href="#"><img alt="Python Version" src="https://img.shields.io/static/v1?logo=python&color=Blue&message=3.13&label=Python"/></a>
+  <a href="#"><img alt="Backend API - FastAPI" src="https://img.shields.io/static/v1?logo=fastapi&color=Blue&message=0.115.11&label=FastAPI"/></a>
+  <a href="https://github.com/Simatwa/weather-api/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/static/v1?logo=MIT&color=Blue&message=MIT&label=License"/></a>
+</p>
+
 This is a FastAPI-based implementation that interacts with the OpenWeatherMap API. It provides a modern, efficient, and user-friendly way to fetch and serve weather data using FastAPI's robust web framework.
 
 
@@ -23,6 +29,16 @@ Follow these steps to set up the project:
 
 2. Install the required dependencies:
     ```bash
+    # Create a virtual environment
+    python -m venv venv
+
+    # Activate the virtual environment
+    # On Windows
+    venv\Scripts\activate
+    # On *nix
+    source venv/bin/activate
+
+    # Install the required dependencies
     pip install -r requirements.txt
     ```
 
@@ -39,7 +55,7 @@ To use the API, you need to configure your OpenWeatherMap API key:
 Once configured, you can start the server by running:
 
 ```bash
-fastapi run app --reload
+$ fastapi run app
 ```
 
 The server will start on `http://localhost:8000`.
